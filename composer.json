@@ -1,0 +1,11 @@
+{
+    "name": "ciss/common",
+    "description": "Common package for ciss developpement",
+    "authors": [
+        {
+            "name": "Antony Marchi",
+            "email": "antony@ciss.fr"
+        }
+    ],
+    "require": {}
+}
