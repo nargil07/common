@@ -165,7 +165,7 @@ class Utilisateur extends AbstractModel implements Authenticatable
     }
 
     public function Personne(){
-        return Personne::where('IDPersonne', $this->IDPersonne)->first();
+        return Personne::where('IDPersonne', $this->IDPersonne);
     }
 
 
