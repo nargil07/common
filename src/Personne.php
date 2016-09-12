@@ -490,9 +490,4 @@ class Personne extends AbstractModel
         $this->MailStatut = $MailStatut;
     }
 
-
-    public function Utilisateur(){
-        $this->hasOne('Ciss\Utilisateur', 'IDPersonne');
-    }
-
 }
