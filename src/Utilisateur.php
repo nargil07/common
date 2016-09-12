@@ -165,7 +165,7 @@ class Utilisateur extends AbstractModel implements Authenticatable
     }
 
     public function Personne(){
-        return $this->hasOne('Ciss\Personne', 'IDUtilisateur');
+        return $this->belongsTo('Ciss\Personne', 'IDPersonne');
     }
 
 
