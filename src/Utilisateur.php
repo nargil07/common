@@ -21,10 +21,6 @@ class Utilisateur extends AbstractModel implements Authenticatable
     ];
     protected $guarded = [];
 
-    private $Mail;
-    private $Nom;
-    private $Prenom;
-
     public function getIDUtilisateur()
     {
         return $this->IDUtilisateur;
@@ -73,16 +69,6 @@ class Utilisateur extends AbstractModel implements Authenticatable
     public function setIDCissClient($value)
     {
         $this->IDCissClient = $value;
-    }
-
-    public function getPrenom()
-    {
-        return $this->Prenom;
-    }
-
-    public function setPrenom($value)
-    {
-        $this->Prenom = $value;
     }
 
     public function getLangue()
@@ -135,15 +121,38 @@ class Utilisateur extends AbstractModel implements Authenticatable
         $this->MotDePasse = $value;
     }
 
+    /**
+     * @return mixed
+     */
     public function getNom()
     {
         return $this->Nom;
     }
 
-    public function setNom($value)
+    /**
+     * @param mixed $Nom
+     */
+    public function setNom($Nom)
     {
-        $this->Nom = $value;
+        $this->Nom = $Nom;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPrenom()
+    {
+        return $this->Prenom;
+    }
+
+    /**
+     * @param mixed $Prenom
+     */
+    public function setPrenom($Prenom)
+    {
+        $this->Prenom = $Prenom;
+    }
+
 
     public function AdresseMail()
     {
