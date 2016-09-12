@@ -165,7 +165,7 @@ class Utilisateur extends AbstractModel implements Authenticatable
     }
 
     public function Personne(){
-        return $this->belongsTo('Ciss\Personne', 'IDPersonne', 'IDPersonne');
+        return Personne::where('IDPersonne', $this->IDPersonne)->first();
     }
 
 
