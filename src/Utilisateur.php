@@ -21,6 +21,10 @@ class Utilisateur extends AbstractModel implements Authenticatable
     ];
     protected $guarded = [];
 
+    private $Mail;
+    private $Nom;
+    private $Prenom;
+
     public function getIDUtilisateur()
     {
         return $this->IDUtilisateur;
