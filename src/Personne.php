@@ -491,4 +491,8 @@ class Personne extends AbstractModel
     }
 
 
+    public function Utilisateur(){
+        $this->hasOne('Ciss\Utilisateur', 'IDPersonne');
+    }
+
 }
