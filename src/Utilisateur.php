@@ -164,8 +164,13 @@ class Utilisateur extends AbstractModel implements Authenticatable
         return $this->hasMany('Ciss\Adresse', 'IDUtilisateur');
     }
 
-    public function Personne(){
-        return Personne::where('IDPersonne', $this->IDPersonne);
+    public function getPersonne(){
+        if($this->IDPersonne != null){
+            return Personne::find($this->IDPersonne);
+        }else{
+            return null;
+        }
+
     }
 
 
