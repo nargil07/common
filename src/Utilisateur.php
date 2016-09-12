@@ -164,6 +164,10 @@ class Utilisateur extends AbstractModel implements Authenticatable
         return $this->hasMany('Ciss\Adresse', 'IDUtilisateur');
     }
 
+    public function Personne(){
+        return $this->hasOne('Ciss\Personne', 'IDUtilisateur');
+    }
+
 
     /**
      * Get the name of the unique identifier for the user.
