@@ -44,7 +44,7 @@ class Personne extends AbstractModel
 
 
     public function Groupe(){
-        return $this->hasManyThrough('Ciss\Groupe', 'Ciss\EstPartagePar', 'IDPersonne', 'IDEstPartagePar', 'IDGroupe');
+        return $this->hasManyThrough('Ciss\Groupe', 'Ciss\EstPartagePar', 'IDPersonne', 'IDGroupe', 'IDPersonne');
     }
 
     /**
