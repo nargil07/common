@@ -30,6 +30,14 @@ class EstPartagePar extends AbstractModel
 //    private $ARecalculer;
 //    private $DateDernierAchat;
 
+    public function Groupes(){
+        return $this->hasMany('Ciss\Groupe', 'IDGroupe', 'IDGroupe');
+    }
+
+    public function Personnes(){
+        return $this->hasMany('Ciss\Personne', 'IDPersonne', 'IDPersonne');
+    }
+
     /**
      * @return mixed
      */

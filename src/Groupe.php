@@ -28,7 +28,11 @@ class Groupe extends AbstractModel
 //    protected $Observation;
 
     public function Personnes(){
-        return $this->hasManyThrough('Ciss\Personne', 'Ciss\EstPartagePar', 'IDGroupe', 'IDEstPartagePar', 'IDPersonne');
+        return $this->belongsToMany('Ciss\Personne', 'estpartagepar', 'IDGroupe', 'IDPersonne');
+    }
+
+    public function EstPartagePars(){
+        return $this->hasMany('Ciss\EstPartagePar', 'IDGroupe', 'IDGroupe');
     }
 
     /**

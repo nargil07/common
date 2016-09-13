@@ -43,8 +43,12 @@ class Personne extends AbstractModel
 //    private $Test;
 
 
-    public function Groupe(){
+    public function Groupes(){
         return $this->belongsToMany('Ciss\Groupe', 'estpartagepar', 'IDPersonne', 'IDGroupe');
+    }
+
+    public function EstPartagePars(){
+        return $this->hasMany('Ciss\EstPartagePar', 'IDPersonne', 'IDPersonne');
     }
 
     /**
