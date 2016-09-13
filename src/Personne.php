@@ -42,6 +42,9 @@ class Personne extends AbstractModel
 //    private $MailStatut;
 //    private $Test;
 
+    public function Utilisateur(){
+        return $this->hasOne('Ciss\Utilisateur', 'IDPersonne', 'IDPersonne');
+    }
 
     public function Groupes(){
         return $this->belongsToMany('Ciss\Groupe', 'estpartagepar', 'IDPersonne', 'IDGroupe');
