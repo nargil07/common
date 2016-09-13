@@ -168,7 +168,7 @@ class Utilisateur extends AbstractModel implements Authenticatable
      * @return null|Personne
      */
     public function Personne(){
-        return $this->hasOne('Ciss\Personne', 'IDPersonne');
+        return $this->hasOne('Ciss\Personne', 'IDPersonne', 'IDPersonne');
 
     }
 
