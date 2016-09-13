@@ -167,12 +167,8 @@ class Utilisateur extends AbstractModel implements Authenticatable
     /**
      * @return null|Personne
      */
-    public function getPersonne(){
-        if($this->IDPersonne != null){
-            return Personne::find($this->IDPersonne);
-        }else{
-            return null;
-        }
+    public function Personne(){
+        return $this->hasOne('Ciss\Personne', 'IDPersonne', 'IDPersonne');
 
     }
 
