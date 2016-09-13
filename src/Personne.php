@@ -42,6 +42,11 @@ class Personne extends AbstractModel
 //    private $MailStatut;
 //    private $Test;
 
+
+    public function Groupe(){
+        return $this->hasManyThrough('Ciss\Groupe', 'Ciss\EstPartagePar', 'IDPersonne', 'IDEstPartagePar', 'IDGroupe');
+    }
+
     /**
      * @return mixed
      */
