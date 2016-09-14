@@ -55,4 +55,14 @@ class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
         $personne->Utilisateur()->save($utilisateur);
         $this->create($utilisateur);
     }
+
+    /**
+     * Cette methode doit supprimer un utilisateur
+     * @param Utilisateur $utilisateur
+     * @return void
+     */
+    public function supprimerUtilisateur(Utilisateur $utilisateur)
+    {
+        $this->delete($utilisateur);
+    }
 }

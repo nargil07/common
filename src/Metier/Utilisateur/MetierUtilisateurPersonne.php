@@ -38,7 +38,14 @@ abstract class MetierUtilisateurPersonne extends MetierUtilisateur
      * Cette methode doit lié des le debut la personne est l'utilisateur avant de creer la suite.
      * @param Utilisateur $utilisateur
      * @param Personne $personne
-     * @return mixed
+     * @return void
      */
     public abstract function ajouterUtilisateur(Utilisateur $utilisateur, Personne $personne);
+
+    /**
+     * Cette methode doit supprimer un utilisateur
+     * @param Utilisateur $utilisateur
+     * @return void
+     */
+    public abstract function supprimerUtilisateur(Utilisateur $utilisateur);
 }
