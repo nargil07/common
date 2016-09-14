@@ -19,7 +19,7 @@ abstract class MetierUtilisateurPersonne extends MetierUtilisateur
     /**
      * @param Utilisateur $abstractModel
      */
-    protected function delete(AbstractModel $abstractModel)
+    protected function delete(AbstractModel &$abstractModel)
     {
         //Je récupère la personne de l'utilisateur que l'on vas supprimer
         //car il faut supprimer d'abord l'user et ensuite la personne.
@@ -40,12 +40,12 @@ abstract class MetierUtilisateurPersonne extends MetierUtilisateur
      * @param Personne $personne
      * @return void
      */
-    public abstract function ajouterUtilisateur(Utilisateur $utilisateur, Personne $personne);
+    public abstract function ajouterUtilisateur(Utilisateur &$utilisateur, Personne &$personne);
 
     /**
      * Cette methode doit supprimer un utilisateur
      * @param Utilisateur $utilisateur
      * @return void
      */
-    public abstract function supprimerUtilisateur(Utilisateur $utilisateur);
+    public abstract function supprimerUtilisateur(Utilisateur &$utilisateur);
 }
