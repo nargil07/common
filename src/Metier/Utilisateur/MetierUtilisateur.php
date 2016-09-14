@@ -35,7 +35,7 @@ abstract class MetierUtilisateur extends AbstractMetier
      * @param Utilisateur $abstractModel
      * @throws \Exception
      */
-    protected function create(AbstractModel &$abstractModel)
+    protected function create(AbstractModel $abstractModel)
     {
         if(!$abstractModel->save()){
             throw new \Exception("Erreur d'ajout de l'utisateur id : ".$abstractModel->getLogin());
@@ -47,7 +47,7 @@ abstract class MetierUtilisateur extends AbstractMetier
      * @param Utilisateur $abstractModel
      * @throws \Exception
      */
-    protected function edit(AbstractModel &$abstractModel)
+    protected function edit(AbstractModel $abstractModel)
     {
         if(!$abstractModel->save()){
             throw new \Exception("Erreur de modification de l'utisateur id : ".$abstractModel->getIDUtilisateur());
@@ -58,7 +58,7 @@ abstract class MetierUtilisateur extends AbstractMetier
      * @param Utilisateur $abstractModel
      * @throws \Exception
      */
-    protected function delete(AbstractModel &$abstractModel)
+    protected function delete(AbstractModel $abstractModel)
     {
         if(!$abstractModel->delete()){
             throw new \Exception("Erreur de suppression de l'utisateur id : ".$abstractModel->getIDUtilisateur());

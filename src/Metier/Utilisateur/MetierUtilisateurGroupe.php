@@ -34,13 +34,13 @@ class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
      * @param Utilisateur $abstractModel
      * @throws \Exception
      */
-    protected function create(AbstractModel &$abstractModel)
+    protected function create(AbstractModel $abstractModel)
     {
         parent::create($abstractModel);
         $abstractModel->Personne->Groupes()->attach($this->groupe);
     }
 
-    protected function delete(AbstractModel &$abstractModel)
+    protected function delete(AbstractModel $abstractModel)
     {
         if($abstractModel->Personne->Groupes()->detach($this->groupe) == 1){
             parent::delete($abstractModel);
@@ -53,7 +53,7 @@ class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
     /**
      * @param Utilisateur $utilisateur
      */
-    public function ajouterUtilisateur(Utilisateur &$utilisateur, Personne &$personne)
+    public function ajouterUtilisateur(Utilisateur $utilisateur, Personne $personne)
     {
         $personne->save();
         $personne->Utilisateur()->save($utilisateur);
@@ -65,7 +65,7 @@ class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
      * @param Utilisateur $utilisateur
      * @return void
      */
-    public function supprimerUtilisateur(Utilisateur &$utilisateur)
+    public function supprimerUtilisateur(Utilisateur $utilisateur)
     {
         $this->delete($utilisateur);
     }

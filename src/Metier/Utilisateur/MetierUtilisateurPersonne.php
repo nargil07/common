@@ -19,17 +19,17 @@ abstract class MetierUtilisateurPersonne extends MetierUtilisateur
     /**
      * @param Utilisateur $abstractModel
      */
-    protected function delete(AbstractModel &$abstractModel)
+    protected function delete(AbstractModel $abstractModel)
     {
         //Je récupère la personne de l'utilisateur que l'on vas supprimer
         //car il faut supprimer d'abord l'user et ensuite la personne.
         $personneLocal = $abstractModel->Personne;
 
-        if($abstractModel->delete()){
+        if(!$abstractModel->delete()){
             throw new \Exception("Erreur lors de la suppression de l'utilisateur " . $abstractModel->getLogin());
         }
 
-        if($personneLocal->delete()){
+        if(!$personneLocal->delete()){
             throw new \Exception("Erreur lors de la suppression de la personne " . $personneLocal->getMail());
         }
     }
@@ -40,12 +40,12 @@ abstract class MetierUtilisateurPersonne extends MetierUtilisateur
      * @param Personne $personne
      * @return void
      */
-    public abstract function ajouterUtilisateur(Utilisateur &$utilisateur, Personne &$personne);
+    public abstract function ajouterUtilisateur(Utilisateur $utilisateur, Personne $personne);
 
     /**
      * Cette methode doit supprimer un utilisateur
      * @param Utilisateur $utilisateur
      * @return void
      */
-    public abstract function supprimerUtilisateur(Utilisateur &$utilisateur);
+    public abstract function supprimerUtilisateur(Utilisateur $utilisateur);
 }

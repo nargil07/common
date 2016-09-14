@@ -15,11 +15,11 @@ abstract class AbstractMetier
 {
     private $mapModel = [];
 
-    protected abstract function create(AbstractModel &$abstractModel);
+    protected abstract function create(AbstractModel $abstractModel);
 
-    protected abstract function edit(AbstractModel &$abstractModel);
+    protected abstract function edit(AbstractModel $abstractModel);
 
-    protected abstract function delete(AbstractModel &$abstractModel);
+    protected abstract function delete(AbstractModel $abstractModel);
 
     /**
      * fonction qui doit retourner une cle unique de l'objet donné en paramètre
