@@ -16,7 +16,9 @@ abstract class AbstractMetier
     private $mapModel = [];
 
     protected abstract function create(AbstractModel $abstractModel);
+
     protected abstract function edit(AbstractModel $abstractModel);
+
     protected abstract function delete(AbstractModel $abstractModel);
 
     /**
@@ -32,8 +34,14 @@ abstract class AbstractMetier
      * @param $key string
      * @return AbstractModel
      */
-    protected function search($key){
-        $result = $this->mapModel[$key];
+    protected function search($key)
+    {
+        $result = null;
+
+        if (array_key_exists($key, $this->mapModel)) {
+            $result = $this->mapModel[$key];
+        }
+
         return $result;
     }
 
@@ -41,7 +49,8 @@ abstract class AbstractMetier
      * Retourne la liste des modeles stocké dans la variable mapModel
      * @return array
      */
-    protected function getListModel(){
+    protected function getListModel()
+    {
         return array_values($this->mapModel);
     }
 
@@ -49,10 +58,11 @@ abstract class AbstractMetier
      * Vide la map de modèle et insere ceux passé en paramètre
      * @return array
      */
-    protected function setListModel($listModele){
+    protected function setListModel($listModele)
+    {
         $this->mapModel = [];
-        if($listModele != null){
-            foreach($listModele as $model){
+        if ($listModele != null) {
+            foreach ($listModele as $model) {
                 $this->mapModel[$this->getKey($model)] = $model;
             }
         }
@@ -61,11 +71,12 @@ abstract class AbstractMetier
     /**
      * @param AbstractModel $abstractModel
      */
-    protected function addModel(AbstractModel $abstractModel){
-        if($abstractModel !=null){
+    protected function addModel(AbstractModel $abstractModel)
+    {
+        if ($abstractModel != null) {
             $key = $this->getKey($abstractModel);
 
-            if($this->search($key) == null){
+            if ($this->search($key) == null) {
                 $this->mapModel[$key] = $abstractModel;
             }
         }
@@ -76,9 +87,10 @@ abstract class AbstractMetier
      * Vériie que le model n'existe pas déjà a l'intérieur avant de l'insérer.
      * @param array $listModels
      */
-    protected function addModels($listModels){
-        if($listModels !=null){
-            foreach($listModels as $model){
+    protected function addModels($listModels)
+    {
+        if ($listModels != null) {
+            foreach ($listModels as $model) {
                 $this->addModel($model);
             }
         }
@@ -88,11 +100,12 @@ abstract class AbstractMetier
      * Supprime de la map l'abstractModel passé en parametre.
      * @param AbstractModel $abstractModel
      */
-    protected function delModel(AbstractModel $abstractModel){
-        if( $abstractModel != null){
+    protected function delModel(AbstractModel $abstractModel)
+    {
+        if ($abstractModel != null) {
             $key = $this->getKey($abstractModel);
 
-            if($this->search($key) != null){
+            if ($this->search($key) != null) {
                 unset($this->mapModel[$key]);
             }
         }
