@@ -58,4 +58,14 @@ class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
     {
         // TODO: Implement ajouterUtilisateur() method.
     }
+
+    /**
+     * Cette methode doit supprimer un utilisateur
+     * @param Utilisateur $utilisateur
+     * @return void
+     */
+    public function supprimerUtilisateur(Utilisateur &$utilisateur)
+    {
+        // TODO: Implement supprimerUtilisateur() method.
+    }
 }
