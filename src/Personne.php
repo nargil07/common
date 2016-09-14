@@ -55,7 +55,7 @@ class Personne extends AbstractModel
     }
 
     public function Magasin(){
-        return $this->hasOne('Ciss\Magasin', 'IDMagasin', 'IDMagasin');
+        return $this->belongsTo('Ciss\Magasin', 'IDMagasin', 'IDMagasin');
     }
 
     /**

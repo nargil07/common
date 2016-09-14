@@ -394,6 +394,4 @@ class Magasin extends AbstractModel
     {
         $this->TypeMagasin = $TypeMagasin;
     }
-
-
 }
