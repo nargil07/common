@@ -54,6 +54,10 @@ class Personne extends AbstractModel
         return $this->hasMany('Ciss\EstPartagePar', 'IDPersonne', 'IDPersonne');
     }
 
+    public function Magasin(){
+        return $this->hasOne('Ciss\Magasin', 'IDMagasin', 'IDMagasin');
+    }
+
     /**
      * @return mixed
      */
