@@ -11,6 +11,7 @@ namespace Ciss\Metier\Utilsateur;
 
 use Ciss\AbstractModel;
 use Ciss\Groupe;
+use Ciss\Personne;
 use Ciss\Utilisateur;
 
 class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
@@ -45,9 +46,13 @@ class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
         parent::delete($abstractModel);
     }
 
-
-    public function ajouterUtilisateur(Utilisateur $utilisateur)
+    /**
+     * @param Utilisateur $utilisateur
+     */
+    public function ajouterUtilisateur(Utilisateur $utilisateur, Personne $personne)
     {
+        $personne->save();
+        $personne->Utilisateur()->save($utilisateur);
         $this->create($utilisateur);
     }
 }

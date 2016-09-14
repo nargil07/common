@@ -11,6 +11,7 @@ namespace Ciss\Metier\Utilsateur;
 
 use Ciss\AbstractModel;
 use Ciss\Magasin;
+use Ciss\Personne;
 use Ciss\Utilisateur;
 
 class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
@@ -34,7 +35,6 @@ class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
     protected function create(AbstractModel $abstractModel)
     {
         $abstractModel->Personne->Magasin()->associate($this->magasin);
-        parent::create($abstractModel);
     }
 
 
@@ -46,5 +46,16 @@ class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
                 . "et la personne " . $abstractModel->Personne->getIDPersonne());
         }
         parent::delete($abstractModel);
+    }
+
+    /**
+     * Cette methode doit lié des le debut la personne est l'utilisateur avant de creer la suite.
+     * @param Utilisateur $utilisateur
+     * @param Personne $personne
+     * @return mixed
+     */
+    public function ajouterUtilisateur(Utilisateur $utilisateur, Personne $personne)
+    {
+        // TODO: Implement ajouterUtilisateur() method.
     }
 }
