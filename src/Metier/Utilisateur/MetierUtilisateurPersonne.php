@@ -30,7 +30,7 @@ abstract class MetierUtilisateurPersonne extends MetierUtilisateur
         }
 
         if($personneLocal->delete()){
-            throw new \Exception("Erreur lors de la suppression de l'utilisateur " . $personneLocal->getMail());
+            throw new \Exception("Erreur lors de la suppression de la personne " . $personneLocal->getMail());
         }
     }
 
