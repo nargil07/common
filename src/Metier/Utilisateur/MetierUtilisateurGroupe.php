@@ -42,8 +42,12 @@ class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
 
     protected function delete(AbstractModel &$abstractModel)
     {
-        $abstractModel->Personne->Groupes()->detach($this->groupe);
-        parent::delete($abstractModel);
+        if($abstractModel->Personne->Groupes()->detach($this->groupe) == 1){
+            parent::delete($abstractModel);
+        }else{
+            throw new \Exception('Erreur lors du détach du groupe a la personne');
+        }
+
     }
 
     /**
