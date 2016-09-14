@@ -39,8 +39,8 @@ class Magasin extends AbstractModel
 //    protected $TypeMagasin;
 
 
-    public function Personne(){
-        $this->hasMany('Ciss\Personne', 'IDMagasin', 'IDMagasin');
+    public function Personnes(){
+        return $this->hasMany('Ciss\Personne', 'IDMagasin', 'IDMagasin');
     }
     
     /**
