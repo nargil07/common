@@ -37,7 +37,7 @@ class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
     protected function create(AbstractModel $abstractModel)
     {
         parent::create($abstractModel);
-        $this->Personne->Groupes()->attach($this->groupe);
+        $abstractModel->Personne->Groupes()->attach($this->groupe);
     }
 
     protected function delete(AbstractModel $abstractModel)
