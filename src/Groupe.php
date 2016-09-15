@@ -35,6 +35,10 @@ class Groupe extends AbstractModel
         return $this->hasMany('Ciss\EstPartagePar', 'IDGroupe', 'IDGroupe');
     }
 
+    public function Gestionnaire(){
+        return $this->hasOne('Ciss\Gestionnaire', 'IDGestionnaire', 'IDGestionnaire');
+    }
+
     /**
      * @return mixed
      */

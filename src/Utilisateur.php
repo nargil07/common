@@ -21,6 +21,29 @@ class Utilisateur extends AbstractModel implements Authenticatable
     ];
     protected $guarded = [];
 
+
+
+    public function AdresseMail()
+    {
+        return $this->hasMany('Ciss\AdresseMail', 'IDUtilisateur');
+    }
+
+    public function Adresse()
+    {
+        return $this->hasMany('Ciss\Adresse', 'IDUtilisateur');
+    }
+
+    public function Gestionnaire(){
+        return $this->hasOne('Ciss\Gestionnaire', 'IDGestionnaire', 'IDGestionnaire');
+    }
+
+    /**
+     * @return null|Personne
+     */
+    public function Personne(){
+        return $this->hasOne('Ciss\Personne', 'IDPersonne', 'IDPersonne');
+    }
+
     public function getIDUtilisateur()
     {
         return $this->IDUtilisateur;
@@ -152,27 +175,6 @@ class Utilisateur extends AbstractModel implements Authenticatable
     {
         $this->Prenom = $Prenom;
     }
-
-
-    public function AdresseMail()
-    {
-        return $this->hasMany('Ciss\AdresseMail', 'IDUtilisateur');
-    }
-
-    public function Adresse()
-    {
-        return $this->hasMany('Ciss\Adresse', 'IDUtilisateur');
-    }
-
-    /**
-     * @return null|Personne
-     */
-    public function Personne(){
-        return $this->hasOne('Ciss\Personne', 'IDPersonne', 'IDPersonne');
-
-    }
-
-
     /**
      * Get the name of the unique identifier for the user.
      *

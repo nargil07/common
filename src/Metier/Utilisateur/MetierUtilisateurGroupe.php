@@ -38,6 +38,8 @@ class MetierUtilisateurGroupe extends MetierUtilisateurPersonne
     {
         parent::create($abstractModel);
         $abstractModel->Personne->Groupes()->attach($this->groupe);
+        $gestionnaire = $this->groupe->Gestionnaire;
+        $abstractModel->Gestionnaire()->associate($gestionnaire);
     }
 
     protected function delete(AbstractModel $abstractModel)

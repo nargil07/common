@@ -42,6 +42,10 @@ class Magasin extends AbstractModel
     public function Personnes(){
         return $this->hasMany('Ciss\Personne', 'IDMagasin', 'IDMagasin');
     }
+
+    public function Gestionnaire(){
+        return $this->hasOne('Ciss\Gestionnaire', 'IDGestionnaire', 'IDGestionnaire');
+    }
     
     /**
      * @return mixed

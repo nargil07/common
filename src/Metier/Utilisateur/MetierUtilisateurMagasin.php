@@ -34,7 +34,10 @@ class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
      */
     protected function create(AbstractModel $abstractModel)
     {
+        parent::create($abstractModel);
         $abstractModel->Personne->Magasin()->associate($this->magasin);
+        $gestionnaire = $this->magasin->Gestionnaire;
+        $abstractModel->Gestionnaire()->associate($gestionnaire);
     }
 
     /**
