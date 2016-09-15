@@ -37,7 +37,10 @@ class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
         $abstractModel->Personne->Magasin()->associate($this->magasin);
     }
 
-
+    /**
+     * @param Utilisateur $abstractModel
+     * @throws \Exception
+     */
     protected function delete(AbstractModel $abstractModel)
     {
         $abstractModel->Personne->Magasin()->dissociate();
@@ -56,7 +59,9 @@ class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
      */
     public function ajouterUtilisateur(Utilisateur $utilisateur, Personne $personne)
     {
-        // TODO: Implement ajouterUtilisateur() method.
+        $personne->save();
+        $personne->Utilisateur()->save($utilisateur);
+        $this->create($utilisateur);
     }
 
     /**
@@ -66,6 +71,6 @@ class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
      */
     public function supprimerUtilisateur(Utilisateur $utilisateur)
     {
-        // TODO: Implement supprimerUtilisateur() method.
+        $this->supprimerUtilisateur($utilisateur);
     }
 }
