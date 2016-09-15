@@ -71,6 +71,6 @@ class MetierUtilisateurMagasin extends MetierUtilisateurPersonne
      */
     public function supprimerUtilisateur(Utilisateur $utilisateur)
     {
-        $this->supprimerUtilisateur($utilisateur);
+        $this->delete($utilisateur);
     }
 }
