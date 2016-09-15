@@ -34,7 +34,7 @@ class Utilisateur extends AbstractModel implements Authenticatable
     }
 
     public function Gestionnaire(){
-        return $this->hasOne('Ciss\Gestionnaire', 'IDGestionnaire', 'IDGestionnaire');
+        return $this->belongsTo('Ciss\Gestionnaire', 'IDGestionnaire', 'IDGestionnaire');
     }
 
     /**

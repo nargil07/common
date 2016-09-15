@@ -36,7 +36,7 @@ class Groupe extends AbstractModel
     }
 
     public function Gestionnaire(){
-        return $this->hasOne('Ciss\Gestionnaire', 'IDGestionnaire', 'IDGestionnaire');
+        return $this->belongsTo('Ciss\Gestionnaire', 'IDGestionnaire', 'IDGestionnaire');
     }
 
     /**
